@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 
 import { RaisedButton } from "../components/Button"
 import { Paper, Grid } from "../components/Container"
+import { Title2, Headline } from "../components/Text"
 import { goBack } from "../redux/modules/router"
 
 const mapStateToProps = () => ({})
@@ -15,8 +16,8 @@ const mapDispatchToProps = {
 const NotFound = ({ goBack }) => (
   <Grid>
     <Paper>
-      <h1>404</h1>
-      <h3>Uh.. parece que te perdiste</h3>
+      <Title2>404</Title2>
+      <Headline>Uh.. parece que te perdiste</Headline>
       <RaisedButton onClick={goBack} color="primary">
         Volver a página anterior
       </RaisedButton>
