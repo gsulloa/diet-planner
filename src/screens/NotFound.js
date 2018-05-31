@@ -2,7 +2,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
-import { LinkPadded } from "../components/Link"
+import { RaisedButton } from "../components/Button"
 import { Paper, Grid } from "../components/Container"
 import { goBack } from "../redux/modules/router"
 
@@ -17,8 +17,12 @@ const NotFound = ({ goBack }) => (
     <Paper>
       <h1>404</h1>
       <h3>Uh.. parece que te perdiste</h3>
-      <LinkPadded onClick={goBack}>Volver a página anterior</LinkPadded>
-      <LinkPadded to="/">Ir a página de inicio</LinkPadded>
+      <RaisedButton onClick={goBack} color="primary">
+        Volver a página anterior
+      </RaisedButton>
+      <RaisedButton to="/" color="secondary">
+        Ir a página de inicio
+      </RaisedButton>
     </Paper>
   </Grid>
 )
