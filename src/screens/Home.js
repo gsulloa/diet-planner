@@ -2,7 +2,8 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 
 import { devlog } from "../utils/log"
-import { ContainerCenter } from "../components/Container"
+import { Paper, Grid } from "../components/Container"
+import { Title2 } from "../components/Text"
 
 const mapStateToProps = () => ({})
 
@@ -12,9 +13,11 @@ class Home extends Component {
   render() {
     devlog("Home", this.props)
     return (
-      <ContainerCenter>
-        <h1>React Template</h1>
-      </ContainerCenter>
+      <Grid xs="6">
+        <Paper>
+          <Title2>React Template</Title2>
+        </Paper>
+      </Grid>
     )
   }
 }

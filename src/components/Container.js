@@ -1,19 +1,15 @@
-import styled from "styled-components"
+import React from "react"
+import PaperMUI from "@material-ui/core/Paper"
+import { withStyles } from "@material-ui/core/styles"
 
-const Container = styled.div`
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-`
+export { default as Grid } from "@material-ui/core/Grid"
 
-export const ContainerRow = styled(Container)`
-  flex-direction: row;
-`
-
-export const ContainerCenter = styled(Container)`
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-`
-
-export default Container
+export const Paper = withStyles(theme => ({
+  paper: {
+    padding: theme.spacing.unit * 2,
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  },
+}))(({ classes, ...props }) => (
+  <PaperMUI className={classes.paper} {...props} />
+))

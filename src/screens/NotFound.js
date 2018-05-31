@@ -2,8 +2,9 @@ import React from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
-import { LinkPadded } from "../components/Link"
-import { ContainerCenter } from "../components/Container"
+import { RaisedButton } from "../components/Button"
+import { Paper, Grid } from "../components/Container"
+import { Title2, Headline } from "../components/Text"
 import { goBack } from "../redux/modules/router"
 
 const mapStateToProps = () => ({})
@@ -13,12 +14,18 @@ const mapDispatchToProps = {
 }
 
 const NotFound = ({ goBack }) => (
-  <ContainerCenter>
-    <h1>404</h1>
-    <h3>Uh.. parece que te perdiste</h3>
-    <LinkPadded onClick={goBack}>Volver a página anterior</LinkPadded>
-    <LinkPadded to="/">Ir a página de inicio</LinkPadded>
-  </ContainerCenter>
+  <Grid>
+    <Paper>
+      <Title2>404</Title2>
+      <Headline>Uh.. parece que te perdiste</Headline>
+      <RaisedButton onClick={goBack} color="primary">
+        Volver a página anterior
+      </RaisedButton>
+      <RaisedButton to="/" color="secondary">
+        Ir a página de inicio
+      </RaisedButton>
+    </Paper>
+  </Grid>
 )
 
 NotFound.propTypes = {
