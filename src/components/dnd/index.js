@@ -1,6 +1,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { DragDropContext } from "react-beautiful-dnd"
+import { Grid } from "../Container"
 export { default as List } from "./List"
 export { default as Element } from "./Element"
 
@@ -70,7 +71,9 @@ class DraggableContainer extends Component {
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        {this.props.children}
+        <Grid container justify="center" spacing={16}>
+          {this.props.children}
+        </Grid>
       </DragDropContext>
     )
   }

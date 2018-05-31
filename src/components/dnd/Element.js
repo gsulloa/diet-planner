@@ -1,12 +1,12 @@
 import React from "react"
 import PropTypes from "prop-types"
 import { Draggable } from "react-beautiful-dnd"
+import { Card, CardContent } from "../Container"
 
 const grid = 8
 const getItemStyle = (isDragging, draggableStyle) => ({
   // some basic styles to make the items look a bit nicer
   userSelect: "none",
-  padding: grid * 2,
   margin: `0 0 ${grid}px 0`,
 
   // change background colour if dragging
@@ -29,7 +29,9 @@ const Element = ({ id, index, content }) => {
             provided.draggableProps.style
           )}
         >
-          {content}
+          <Card>
+            <CardContent>{content}</CardContent>
+          </Card>
         </div>
       )}
     </Draggable>

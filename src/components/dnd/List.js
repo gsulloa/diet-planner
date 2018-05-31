@@ -3,6 +3,8 @@ import PropTypes from "prop-types"
 import { Droppable } from "react-beautiful-dnd"
 
 import Element from "./Element"
+import { Grid } from "../Container"
+import { Title } from "../Text"
 
 const grid = 8
 const getListStyle = isDraggingOver => ({
@@ -13,7 +15,8 @@ const getListStyle = isDraggingOver => ({
 
 const List = ({ items, listId }) => {
   return (
-    <div>
+    <Grid item>
+      <Title>{listId}</Title>
       <Droppable droppableId={listId}>
         {(provided, snapshot) => (
           <div
@@ -32,7 +35,7 @@ const List = ({ items, listId }) => {
           </div>
         )}
       </Droppable>
-    </div>
+    </Grid>
   )
 }
 List.propTypes = {
