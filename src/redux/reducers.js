@@ -1,6 +1,8 @@
 import { combineReducers } from "redux"
 import { persistReducer } from "redux-persist"
 
+import meals from "./modules/meals"
+
 import router from "./modules/router"
 
 function configureReducers(storage) {
@@ -12,6 +14,7 @@ function configureReducers(storage) {
   }
 
   const combinedReducer = combineReducers({
+    meals,
     router,
   })
 
